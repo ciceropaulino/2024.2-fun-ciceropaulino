@@ -1,6 +1,6 @@
 module Nat where
 
-import Prelude hiding (Num (..))
+import Prelude hiding (Num (..), (^))
 
 -- Naturals definition
 data Nat = O | S Nat deriving (Eq, Show)
@@ -14,8 +14,13 @@ n + (S m) = S (n + m)
 
 -- Defining multiplication
 (*) :: Nat -> Nat -> Nat
-n * O = O
+_ * O = O
 n * (S m) = (n * m) + n
+
+-- Defining exponentiation
+(^) :: Nat -> Nat -> Nat
+_ ^ O = S O
+n ^ (S m) = n * (n ^ m)
 
 -- [Syntactic Sugar]
 o, so, sso, ssso, sssso, ssssso, sssssso :: Nat
