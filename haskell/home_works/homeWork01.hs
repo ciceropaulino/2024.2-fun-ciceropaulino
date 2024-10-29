@@ -22,6 +22,10 @@ n * (S m) = (n * m) + n
 _ ^ O = S O
 n ^ (S m) = n * (n ^ m)
 
+-- [Question 3.] Define a double function that returns double its input.
+double :: Nat -> Nat
+double n = n * S (S o)
+
 -- [Syntactic Sugar]
 o, so, sso, ssso, sssso, ssssso, sssssso :: Nat
 o = O
