@@ -39,9 +39,8 @@ fact n = n * pred n
 
 -- [2.] Fib:
 fib :: Nat -> Nat
-fib O = O
-fib (S O) = S O
 fib (S (S n)) = fib (S n) + fib n
+fib n = n
 
 -- [Syntactic Sugar]
 o, so, sso, ssso, sssso, ssssso, sssssso, ssssssso, sssssssso, ssssssssso :: Nat
