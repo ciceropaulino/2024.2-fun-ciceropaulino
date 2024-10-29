@@ -31,6 +31,12 @@ pred :: Nat -> Nat
 pred O = O
 pred (S n) = n
 
+-- [Question 8.] Define the functions:
+-- [1.] Fact:
+fact :: Nat -> Nat
+fact O = S o
+fact n = n * pred n
+
 -- [Syntactic Sugar]
 o, so, sso, ssso, sssso, ssssso, sssssso :: Nat
 o = O
