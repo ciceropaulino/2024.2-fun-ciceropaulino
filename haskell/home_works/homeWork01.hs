@@ -44,11 +44,17 @@ fib (S O) = S O
 fib (S (S n)) = fib (S n) + fib n
 
 -- [Syntactic Sugar]
-o, so, sso, ssso, sssso, ssssso, sssssso :: Nat
+o, so, sso, ssso, sssso, ssssso, sssssso, ssssssso, sssssssso, ssssssssso :: Nat
+-- For 0
 o = O
 so = S o
 sso = S so
 ssso = S sso
 sssso = S ssso
 ssssso = S sssso
-sssssso = S ssssso
+sssssso = S sssssso
+ssssssso = S sssssso
+sssssssso = S sssssssso
+ssssssssso = S ssssssssso
+
+-- to 10
