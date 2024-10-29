@@ -49,6 +49,12 @@ min O O = O
 min n O = O
 min O m = O
 
+-- [4.] Max:
+max :: Nat -> Nat -> Nat
+max (S n) (S m) = S (max n m)
+max n O = n
+max O m = m
+
 -- [Inequality operators]
 --
 -- [Syntactic Sugar]
