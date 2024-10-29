@@ -1,6 +1,6 @@
 module Nat where
 
-import Prelude hiding (Num (..), (^))
+import Prelude hiding (Num (..), pred, (^))
 
 -- Naturals definition
 data Nat = O | S Nat deriving (Eq, Show)
@@ -25,6 +25,11 @@ n ^ (S m) = n * (n ^ m)
 -- [Question 3.] Define a double function that returns double its input.
 double :: Nat -> Nat
 double n = n * S (S o)
+
+-- [Question 7.] Define the pred function.
+pred :: Nat -> Nat
+pred O = O
+pred (S n) = n
 
 -- [Syntactic Sugar]
 o, so, sso, ssso, sssso, ssssso, sssssso :: Nat
