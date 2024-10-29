@@ -1,6 +1,6 @@
 module Nat where
 
-import Prelude hiding (Num (..), pred, (^))
+import Prelude hiding (Num (..), max, min, pred, (<), (<=), (>), (>=), (^))
 
 -- Naturals definition
 data Nat = O | S Nat deriving (Eq, Show)
@@ -35,13 +35,22 @@ pred (S n) = n
 -- [1.] Fact:
 fact :: Nat -> Nat
 fact O = S o
-fact n = n * pred n
+fact (S n) = S n * fact n
 
 -- [2.] Fib:
 fib :: Nat -> Nat
 fib (S (S n)) = fib (S n) + fib n
 fib n = n
 
+-- [3.] Min:
+min :: Nat -> Nat -> Nat
+min (S n) (S m) = S (min n m)
+min O O = O
+min n O = O
+min O m = O
+
+-- [Inequality operators]
+--
 -- [Syntactic Sugar]
 o, so, sso, ssso, sssso, ssssso, sssssso, ssssssso, sssssssso, ssssssssso :: Nat
 -- For 0
