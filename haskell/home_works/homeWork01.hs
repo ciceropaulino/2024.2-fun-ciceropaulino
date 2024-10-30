@@ -1,6 +1,6 @@
 module Nat where
 
-import Prelude hiding (Num (..), max, min, pred, (<), (<=), (>), (>=), (^))
+import Prelude hiding (Num (..), div, max, min, pred, (<), (<=), (>), (>=), (^))
 
 -- Naturals definition
 data Nat = O | S Nat deriving (Eq, Show)
@@ -10,7 +10,14 @@ data Nat = O | S Nat deriving (Eq, Show)
 -- Defining sum
 (+) :: Nat -> Nat -> Nat
 n + O = n
+O + m = m
 n + (S m) = S (n + m)
+
+-- Defining Nat minus
+nminus :: Nat -> Nat -> Nat
+nminus n O = n
+nminus O _ = O
+nminus (S n) (S m) = nminus n m
 
 -- Defining multiplication
 (*) :: Nat -> Nat -> Nat
@@ -55,6 +62,12 @@ max (S n) (S m) = S (max n m)
 max n O = n
 max O m = m
 
+-- [5.] Div:
+-- div :: Nat -> Nat -> Nat
+-- div m n = div (n - m) m
+-- div n O = n
+-- div O m = O
+
 -- [Inequality operators]
 --
 -- [Syntactic Sugar]
@@ -66,7 +79,7 @@ sso = S so
 ssso = S sso
 sssso = S ssso
 ssssso = S sssso
-sssssso = S sssssso
+sssssso = S ssssso
 ssssssso = S sssssso
 sssssssso = S sssssssso
 ssssssssso = S ssssssssso
